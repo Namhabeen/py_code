@@ -49,7 +49,7 @@ for filename in os.listdir(input_folder):
         # 조건 2: '코드명' 열에 '술' 키워드를 포함하거나 '진료내역' 열에 '수술'이 포함되고, 진료시작일이 최근 3개월 이내인 경우
         condition_2_df = recent_df[
             recent_df['코드명'].str.contains('|'.join(condition_2_keywords_1), na=False) |
-            recent_df['진료내역'].str..contains('|'.join(condition_2_keywords_2),na=False)
+            recent_df['진료내역'].str.contains('|'.join(condition_2_keywords_2),na=False)
         ].copy()
 
         if not condition_2_df.empty:
